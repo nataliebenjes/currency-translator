@@ -1,5 +1,4 @@
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './css/styles.css';
 import TranslateService from './translator.js';
 
@@ -28,6 +27,7 @@ function handleFormSubmission(event) {
   event.preventDefault();
   const phrase = document.querySelector('#entry').value;
   document.querySelector('#entry').value = null;
+  console.log(phrase);
   getTranslation(phrase);
 }
 

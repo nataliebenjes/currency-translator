@@ -16,4 +16,5 @@ export default class TranslateService {
       request.open("GET", url, true);
       request.send();
     });
-  } 
+  }
+}
