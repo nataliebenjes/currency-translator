@@ -1,17 +1,20 @@
 {
   "name": "translator",
   "version": "1.0.0",
-  "description": "**This was written for Node version 16, if you have a different version of Node, this will not work. See the bottom of this file for more information**",
+  "description": "#### By _**Natalie Benjes**_",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
     "build": "webpack --mode=development",
-    "start": "webpack-dev-server --open --mode=development"
+    "start": "npm run build && webpack-dev-server --open --mode=development",
+    "lint": "eslint src --ext .js",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
     "dotenv-webpack": "^2.0.0",
@@ -25,5 +28,8 @@
     "webpack": "4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "3.11.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
   }
 }

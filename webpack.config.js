@@ -16,16 +16,16 @@ module.exports = {
 
   devtool: 'eval-source-map',
   plugins: [
-    new ESLintPlugin(),
     new CleanWebpackPlugin({
       verbose: true
     }),
+    new ESLintPlugin(),
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'translator',
+      title: 'Shape Tracker',
       template: './src/index.html',
       inject: 'body'
-    }),
-    new Dotenv()
+    })
   ],
   module: {
     rules: [

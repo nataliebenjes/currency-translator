@@ -8,6 +8,7 @@ function getTranslation(phrase) {
   console.log(phrase);
   let promise = TranslateService.getTranslation(phrase);
   promise.then(function (conversion_rates) {
+
     printElements(conversion_rates.USD);
   }, function (conversion_rates) {
     printError(conversion_rates.USD);
