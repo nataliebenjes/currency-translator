@@ -7,10 +7,10 @@ import TranslateService from './translator.js';
 function getTranslation(phrase) {
   console.log(phrase);
   let promise = TranslateService.getTranslation(phrase);
-  promise.then(function (response) {
-    printElements(response.conversion_rates);
-  }, function (response) {
-    printError(response.conversion_rates);
+  promise.then(function (conversion_rates) {
+    printElements(conversion_rates.USD);
+  }, function (conversion_rates) {
+    printError(conversion_rates.USD);
   });
 }
 
