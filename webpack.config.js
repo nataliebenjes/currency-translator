@@ -17,7 +17,9 @@ module.exports = {
   devtool: 'eval-source-map',
   plugins: [
     new ESLintPlugin(),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
     new HtmlWebpackPlugin({
       title: 'translator',
       template: './src/index.html',
@@ -28,6 +30,25 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(gif|png|avif|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
+
+      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -36,4 +57,5 @@ module.exports = {
       }
     ]
   }
+
 };

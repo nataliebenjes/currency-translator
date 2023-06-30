@@ -17,7 +17,7 @@ function getTranslation(phrase) {
 // UI Logic
 
 function printElements(translation) {
-  document.querySelector('#showResponse').innerText = `Your translated phrase is ${translation}`
+  document.querySelector('#showResponse').innerText = `Your translated phrase is ${translation}`;
 }
 
 function printError(error) {
