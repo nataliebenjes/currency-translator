@@ -26,7 +26,7 @@ function printError(error) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const phrase = document.querySelector('#entryad').value;
+  const phrase = document.querySelector('#entry').value;
   document.querySelector('#entry').value = null;
   getTranslation(phrase);
 }
