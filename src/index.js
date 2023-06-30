@@ -5,11 +5,12 @@ import TranslateService from './translator.js';
 // Business Logic
 
 function getTranslation(phrase) {
+  console.log(phrase);
   let promise = TranslateService.getTranslation(phrase);
-  promise.then(function (translation) {
-    printElements(translation);
-  }, function (errorArray) {
-    printError(errorArray);
+  promise.then(function (response) {
+    printElements(response.conversion_rates);
+  }, function (response) {
+    printError(response.conversion_rates);
   });
 }
 
@@ -26,8 +27,6 @@ function printError(error) {
 function handleFormSubmission(event) {
   event.preventDefault();
   const phrase = document.querySelector('#entry').value;
-  document.querySelector('#entry').value = null;
-  console.log(phrase);
   getTranslation(phrase);
 }
 
